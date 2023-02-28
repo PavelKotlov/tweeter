@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  margin-top: 120px;
+  height: 400px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #d17300;
+  background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.header--username > h2 {
+  color: #FFFFFF;
+  margin: 0px;
+}
