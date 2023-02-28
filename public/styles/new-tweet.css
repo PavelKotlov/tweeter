@@ -1,0 +1,41 @@
+.new-tweet {
+  margin-top: 1em;
+}
+
+/* Textbox */
+.new-tweet--input {
+  display: block;
+  height: 2em;
+  width: 100%;
+  background-color: transparent;
+  font-weight: 600;
+  resize: none;
+  border: 0px;
+  border-bottom: 0.1em solid black;
+}
+
+.new-tweet--input:focus {
+  outline: none;
+}
+
+/* Footer - submit button and counter */
+.new-tweet--footer {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee";
+}
+
+.new-tweet--footer > button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  border: 0px;
+  margin-top: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.counter {
+  margin-top: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
