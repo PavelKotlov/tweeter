@@ -1,0 +1,58 @@
+/* Tweet container */
+.tweet-feed {
+  margin-top: 2em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+}
+
+.tweet-feed:hover {
+  box-shadow: 5px 10px #888888;
+}
+
+/* Tweet header - user details */
+.tweet-feed--user-details {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.tweet-feed img {
+  height: 4em;
+  width: 4em;
+}
+
+.tweet-feed--user-details > div {
+  display: flex;
+}
+
+/* Tweet article - user content */
+.tweet-feed--article {
+  padding: 1em;
+  font-weight: 600;
+  border-bottom: 2px solid black;
+}
+
+/* Tweet footer - tweet details and controls */
+.tweet-feed--footer {
+  display: flex;
+  font-size: 0.8em;
+  padding-left: 1em;
+  padding-right: 1em;
+  justify-content: space-between;
+}
+
+.tweet-feed--footer > div {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-feed--footer > div > i {
+  padding-left: 1em;
+  color: #4056A1;
+}
+
+.tweet-feed--footer > div > i:hover {
+  color: #d17300;
+}
