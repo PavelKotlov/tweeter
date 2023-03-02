@@ -66,4 +66,5 @@
 
 .tweet-footer > div > i:hover {
   color: #d17300;
+  cursor: pointer;
 }
