@@ -42,4 +42,11 @@ nav > span {
 /* angle-double-down icon */
 .nav--write-new-tweet > i {
   color: red;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {transform: translateY(-3px);}
+  50% {transform: translateY(3px);}
+  100% {transform: translateY(-3px);}
 }
