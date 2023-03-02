@@ -5,9 +5,12 @@
  */
 
 $(document).ready(() => {
-  /* Helper fuctions */
+  /* Get jQuery elements */
   const tweetsContainer = $('#tweets-container');
-  
+  const $error = $("#error");
+  const $form = $("form");
+
+  /* Helper fuctions */
   const escape = (str) => {
     let div = $("<div>").text(str);;
     return div[0].innerHTML;
@@ -55,7 +58,13 @@ $(document).ready(() => {
 
     $form[0][2].innerText = 140;
   };
-  /* AJAX HTTP requests and event listeners */
+  
+  const formInputError = (message) => {
+    $error.empty();
+    $error.append('<i class="fa-solid fa-triangle-exclamation"></i>');
+    $error.append(`<p>${message}</p>`);
+  };
+
   const loadTweets = () => {
     $.ajax({
       method: "GET",
@@ -67,27 +76,35 @@ $(document).ready(() => {
       },
     });
   };
-  
-  loadTweets();
 
-  const $form = $("form");
+  /* Event listeners */
+  $form.on("input", (event) => {
+    event.preventDefault();
+    $error.empty()
+  });
 
   $form.on("submit", (event) => {
     event.preventDefault();
 
     const userInput = event.currentTarget[0].value;
+    
+    /* Error Messages */
+    const noInput = "Oh oh! Couldn't hear you humming, please be louder and tell us what are you humming about?";
 
+    const inputOverLimit = "That's some nice humming, but please keep it shorter. Thanks.";
+
+    /* POST to /tweets upon validated user input */
     if (!userInput) {
-      alert("Oh oh! No humming recorded! Please tell us what are you humming about?");
+     formInputError(noInput);
     } else if (userInput.length > 140) {
-      alert("That's some nice humming, but please keep it shorter. Thanks.");
+      formInputError(inputOverLimit);
     } else {
-      const urlencoded = $form.serialize();
       $.ajax({
         method: "POST",
         url: "/tweets",
-        data: urlencoded,
+        data: $form.serialize(),
         success:  (response) => {
+          $error.empty();
           loadTweets();
           resetFrom();
         }, 
@@ -96,4 +113,7 @@ $(document).ready(() => {
 
   });
   
+  /* Run script */
+  loadTweets();
+
 });
