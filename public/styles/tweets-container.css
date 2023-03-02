@@ -1,6 +1,5 @@
 /* Tweet container */
 #tweets-container {
-  margin-top: 2em;
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -43,6 +42,7 @@
   font-weight: 600;
   padding: 1em;
   margin: 0px;
+  word-wrap: break-word;
   border-bottom: 0.2em solid black;
 }
 /* Tweet footer - tweet details and controls */
