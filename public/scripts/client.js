@@ -6,6 +6,8 @@
 
 $(document).ready(() => {
   /* Helper fuctions */
+  const tweetsContainer = $('#tweets-container');
+
   const createTweetElement = (tweetData) => {
     const user = tweetData.user;
     const content = tweetData.content;
@@ -38,10 +40,16 @@ $(document).ready(() => {
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet);
+      tweetsContainer.prepend($tweet);
     }
-  }
+  };
 
+  const resetFrom = () => {
+    $form.trigger("reset");
+    console.log($form);
+
+    $form[0][2].innerText = 140;
+  };
   /* AJAX HTTP requests and event listeners */
   const loadTweets = () => {
     $.ajax({
@@ -49,6 +57,7 @@ $(document).ready(() => {
       url: "/tweets",
       dataType: "JSON",
       success: (response) => {
+        tweetsContainer.empty();
         renderTweets(response);
       },
     });
@@ -75,6 +84,7 @@ $(document).ready(() => {
         data: urlencoded,
         success:  (response) => {
           loadTweets();
+          resetFrom();
         }, 
       });
     }
