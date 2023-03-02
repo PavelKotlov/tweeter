@@ -4,10 +4,19 @@
   padding: 1em;
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  border: 2px solid red;
 }
 
-#tweets-container:hover {
+/* Tweet article */
+.tweet {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  border: 2px solid black;
+  margin-bottom: 1em;
+}
+
+.tweet:hover {
   box-shadow: 5px 10px #888888;
 }
 
@@ -16,24 +25,27 @@
   display: flex;
   justify-content: space-between;
   align-content: center;
+  align-items: center;
 }
 
 .tweet-header img {
-  height: 4em;
-  width: 4em;
+  height: 3em;
+  width: 3em;
+  margin-right: 1em;
 }
 
 .tweet-header > div {
   display: flex;
+  align-items: center;
 }
 
-/* Tweet article - user content */
-.tweet {
-  padding: 1em;
+/* Tweet paragraph - content */
+.tweet > p {
   font-weight: 600;
-  border-bottom: 2px solid black;
+  padding: 1em;
+  margin: 0px;
+  border-bottom: 0.2em solid black;
 }
-
 /* Tweet footer - tweet details and controls */
 .tweet-footer {
   display: flex;
