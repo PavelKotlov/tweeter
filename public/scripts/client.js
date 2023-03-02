@@ -6,9 +6,11 @@
 
 $(document).ready(() => {
   /* Get jQuery elements */
-  const tweetsContainer = $('#tweets-container');
+  const $tweetsContainer = $('#tweets-container');
   const $error = $("#error");
   const $form = $("form");
+  const $newTweetSection = $(".new-tweet");
+  const $newTweetWrite = $(".nav--write-new-tweet");
 
   /* Helper fuctions */
   const escape = (str) => {
@@ -48,7 +50,7 @@ $(document).ready(() => {
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      tweetsContainer.prepend($tweet);
+      $tweetsContainer.prepend($tweet);
     }
   };
 
@@ -71,7 +73,7 @@ $(document).ready(() => {
       url: "/tweets",
       dataType: "JSON",
       success: (response) => {
-        tweetsContainer.empty();
+        $tweetsContainer.empty();
         renderTweets(response);
       },
     });
@@ -107,12 +109,23 @@ $(document).ready(() => {
           $error.empty();
           loadTweets();
           resetFrom();
+          $newTweetSection.slideUp();
         }, 
       });
     }
 
   });
   
+  $newTweetWrite.on("click", (event) => {
+    if ($newTweetSection.is(":hidden")) {
+      $newTweetSection.slideDown();
+      $(".new-tweet--input").focus();
+      return
+    }
+
+    $newTweetSection.slideUp();
+  });
+
   /* Run script */
   loadTweets();
 
