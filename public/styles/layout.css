@@ -31,3 +31,13 @@ body {
  main {
   width: 90%;
 }
+
+h3 {
+  margin: 0px;
+  margin-top: 1em;
+  border-bottom: 0.1em solid #545149;
+  font-weight: 600;
+  font-size: 2em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
