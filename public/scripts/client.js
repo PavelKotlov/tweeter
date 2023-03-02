@@ -5,31 +5,7 @@
  */
 
 $(document).ready(() => {
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1677536197452
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1677622597452
-    }
-  ]
-  
+  /* Helper fuctions */
   const createTweetElement = (tweetData) => {
     const user = tweetData.user;
     const content = tweetData.content;
@@ -66,31 +42,43 @@ $(document).ready(() => {
     }
   }
 
+  /* AJAX HTTP requests and event listeners */
+  const loadTweets = () => {
+    $.ajax({
+      method: "GET",
+      url: "/tweets",
+      dataType: "JSON",
+      success: (response) => {
+        renderTweets(response);
+      },
+    });
+  };
+  
+  loadTweets();
+
   const $form = $("form");
+
   $form.on("submit", (event) => {
     event.preventDefault();
 
-    const urlencoded = $form.serialize();
-    console.log(urlencoded);
+    const userInput = event.currentTarget[0].value;
 
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: urlencoded,
-      success:  (response) => {
-        console.log("Created Tweet");
-      }, 
-    });
+    if (!userInput) {
+      alert("Oh oh! No humming recorded! Please tell us what are you humming about?");
+    } else if (userInput.length > 140) {
+      alert("That's some nice humming, but please keep it shorter. Thanks.");
+    } else {
+      const urlencoded = $form.serialize();
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: urlencoded,
+        success:  (response) => {
+          loadTweets();
+        }, 
+      });
+    }
+
   });
   
-  const loadTweets = $.ajax({
-    method: "GET",
-    url: "/tweets",
-    dataType: "JSON",
-    success: (responseData) => {
-      renderTweets(responseData);
-    },
-  });
-  
-  loadTweets;
 });
