@@ -28,6 +28,11 @@ nav > span {
   justify-content: space-between;
 }
 
+.nav--write-new-tweet:hover {
+  color: #d17300;
+  cursor: pointer;
+}
+
 .nav--write-new-tweet > p {
   margin: 0px;
   margin-top: 30px;
