@@ -41,3 +41,27 @@ h3 {
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
+
+#return-to-top {
+  display: none;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 99;
+  font-size: 31px;
+  height: 2em;
+  width: 2em;
+  border: none;
+  padding: 5px;
+  outline: none;
+  background-color: red;
+  color: white;
+  box-shadow: 0 2px 4px darkslategray;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+#return-to-top:hover {
+  background-color: #4056A1;
+}
