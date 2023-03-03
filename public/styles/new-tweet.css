@@ -4,10 +4,11 @@
 }
 
 /* Textbox */
-.new-tweet--input {
+#tweet-text {
   display: block;
-  height: 2em;
+  height: auto;
   width: 100%;
+  padding: 0;
   background-color: transparent;
   font-weight: 600;
   resize: none;
@@ -15,7 +16,7 @@
   border-bottom: 0.1em solid black;
 }
 
-.new-tweet--input:focus {
+#tweet-text:focus {
   outline: none;
 }
 
@@ -37,24 +38,24 @@
 }
 
 /* Footer - submit button and counter */
-.new-tweet--footer {
+.new-tweet-footer {
   display: flex;
   justify-content: space-between;
   font-family: "Bungee";
 }
 
-.new-tweet--footer > button {
+.new-tweet-footer > button {
   background-color: #4056A1;
   color: #FFFFFF;
   border: 0px;
-  margin-top: 1em;
+  margin-top: 0.5em;
   padding-left: 0.5em;
   padding-right: 0.5em;
   cursor: pointer;
 }
 
 .counter {
-  margin-top: 1em;
+  margin-top: 0.5em;
   padding-left: 0.5em;
   padding-right: 0.5em;
 }

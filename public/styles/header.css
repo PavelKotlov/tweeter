@@ -1,7 +1,7 @@
 .profile {
   display: flex;
-  margin-top: 120px;
-  height: 400px;
+  padding-top: 50px;
+  height: 520px;
   width: 100%;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +11,7 @@
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
-.profile--username > h2 {
+.profile-username {
   color: #FFFFFF;
   margin: 0px;
 }

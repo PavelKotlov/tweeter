@@ -1,7 +1,6 @@
 nav {
   display: flex;
   height: 120px;
-  background-color: #4056A1;
   color: #FFFFFF;
   align-items: center;
   justify-content: space-between;
@@ -21,31 +20,31 @@ nav > span {
 }
 
 /* Write a new tweet */
-.nav--write-new-tweet {
+.write-new-tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
 
-.nav--write-new-tweet:hover {
+.write-new-tweet:hover {
   color: #d17300;
   cursor: pointer;
 }
 
-.nav--write-new-tweet > p {
+.write-new-tweet > p {
   margin: 0px;
   margin-top: 30px;
   font-family: "Source Sans Pro";
   font-weight: 300;
 }
 
-.nav--write-new-tweet > p > span {
+.write-new-tweet > p > span {
   font-weight: bold;
 }
 
 /* angle-double-down icon */
-.nav--write-new-tweet > i {
+.write-new-tweet > i {
   color: red;
   animation: bounce 2s ease-in-out infinite;
 }
