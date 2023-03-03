@@ -3,8 +3,9 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+const $document = $(document);
 
-$(document).ready(() => {
+$document.ready(() => {
   /* Get jQuery elements */
   const $tweetsContainer = $('#tweets-container');
   const $error = $("#error");
@@ -14,7 +15,7 @@ $(document).ready(() => {
 
   /* Helper fuctions */
   const escape = (str) => {
-    let div = $("<div>").text(str);;
+    let div = $("<div>").text(str);
     return div[0].innerHTML;
   };
 
@@ -82,7 +83,7 @@ $(document).ready(() => {
   /* Event listeners */
   $form.on("input", (event) => {
     event.preventDefault();
-    $error.empty()
+    $error.empty();
   });
 
   $form.on("submit", (event) => {
@@ -97,7 +98,7 @@ $(document).ready(() => {
 
     /* POST to /tweets upon validated user input */
     if (!userInput) {
-     formInputError(noInput);
+      formInputError(noInput);
     } else if (userInput.length > 140) {
       formInputError(inputOverLimit);
     } else {
@@ -109,17 +110,18 @@ $(document).ready(() => {
           $error.empty();
           loadTweets();
           resetFrom();
-        }, 
+        },
       });
     }
 
   });
   
   $newTweetWrite.on("click", (event) => {
+    /* Display new tweet textarea */
     if ($newTweetSection.is(":hidden")) {
       $newTweetSection.slideDown();
       $("#tweet-text").focus();
-      return
+      return;
     }
 
     $newTweetSection.slideUp();
@@ -127,5 +129,4 @@ $(document).ready(() => {
 
   /* Run script */
   loadTweets();
-
 });

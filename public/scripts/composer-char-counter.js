@@ -1,4 +1,6 @@
-$(document).ready(() => {
+const $document = $(document);
+
+$document.ready(() => {
   /* Character counter */
   $("#tweet-text").on("input", function() {
     const userInput = this.value;
@@ -17,35 +19,40 @@ $(document).ready(() => {
   
   /* Return to top button*/
   const scrollFunction = () => {
-    const $scrollPosition = $(document)[0].scrollingElement.scrollTop;
-    const $pageWidth = Number($(document).width());
-    const $nav = $("nav")[0]
-    let $buttonStyleDisplay = $("#return-to-top")[0];
+    const $scrollPosition = $document[0].scrollingElement.scrollTop;
+    const $pageWidth = Number($document.width());
+    const $nav = $("nav")[0];
+    const $buttonStyleDisplay = $("#return-to-top")[0];
+    let scollLimit = 400;
 
-    let scollBreak = 400;
-
+    /* Set scroll limit based on page width */
     if ($pageWidth >= 1024) {
-      scollBreak = 120;
+      scollLimit = 120;
     }
 
-    if ($scrollPosition > scollBreak) {
+    /* Display or hide return-to-top button */
+    if ($scrollPosition > scollLimit) {
       $buttonStyleDisplay.style.display = "block";
       $nav.style.display = "none";
     } else {
       $buttonStyleDisplay.style.display = "none";
       $nav.style.display = "flex";
     }
-  }
+  };
 
+  /* Event listeners */
   $("#return-to-top").on("click", () => {
-    $(document).scrollTop(0);
+    $document.scrollTop(0);
     const $newTweetSection = $(".new-tweet");
     if ($newTweetSection.is(":hidden")) {
       $newTweetSection.slideDown();
       $("#tweet-text").focus();
-      return
+      return;
     }
-  })
+  });
 
-  $(window).scroll(() => {scrollFunction()});
+  /* Run script */
+  $(window).scroll(() => {
+    scrollFunction();
+  });
 });
