@@ -3,9 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const $document = $(document);
-
-$document.ready(() => {
+$(document).ready(() => {
   /* Get jQuery elements */
   const $tweetsContainer = $('#tweets-container');
   const $error = $("#error");

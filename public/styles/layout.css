@@ -80,6 +80,10 @@ h3 {
     position: static;
   }
 
+  body > nav > .write-new-tweet:hover {
+    color: #d17300;
+  }
+
   .container > .profile {
     width: 25vw;
     height: 25vw;

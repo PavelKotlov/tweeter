@@ -1,6 +1,4 @@
-const $document = $(document);
-
-$document.ready(() => {
+$(document).ready(() => {
   /* Character counter */
   $("#tweet-text").on("input", function() {
     const userInput = this.value;
@@ -19,8 +17,8 @@ $document.ready(() => {
   
   /* Return to top button*/
   const scrollFunction = () => {
-    const $scrollPosition = $document[0].scrollingElement.scrollTop;
-    const $pageWidth = Number($document.width());
+    const $scrollPosition = $(document)[0].scrollingElement.scrollTop;
+    const $pageWidth = Number($(document).width());
     const $nav = $("nav")[0];
     const $buttonStyleDisplay = $("#return-to-top")[0];
     let scollLimit = 400;
@@ -42,7 +40,7 @@ $document.ready(() => {
 
   /* Event listeners */
   $("#return-to-top").on("click", () => {
-    $document.scrollTop(0);
+    $(document).scrollTop(0);
     const $newTweetSection = $(".new-tweet");
     if ($newTweetSection.is(":hidden")) {
       $newTweetSection.slideDown();
