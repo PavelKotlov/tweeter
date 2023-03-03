@@ -1,6 +1,6 @@
 $(document).ready(() => {
   /* Character counter */
-  $(".new-tweet form textarea").on("input", function() {
+  $("#tweet-text").on("input", function() {
     const userInput = this.value;
     const charLimit = 140;
     const counter = $(this).parents().find(".counter");
@@ -18,10 +18,17 @@ $(document).ready(() => {
   /* Return to top button*/
   const scrollFunction = () => {
     const $scrollPosition = $(document)[0].scrollingElement.scrollTop;
+    const $pageWidth = Number($(document).width());
     const $nav = $("nav")[0]
     let $buttonStyleDisplay = $("#return-to-top")[0];
-    
-    if ($scrollPosition > 400) {
+
+    let scollBreak = 400;
+
+    if ($pageWidth >= 1024) {
+      scollBreak = 120;
+    }
+
+    if ($scrollPosition > scollBreak) {
       $buttonStyleDisplay.style.display = "block";
       $nav.style.display = "none";
     } else {
@@ -35,7 +42,7 @@ $(document).ready(() => {
     const $newTweetSection = $(".new-tweet");
     if ($newTweetSection.is(":hidden")) {
       $newTweetSection.slideDown();
-      $(".new-tweet--input").focus();
+      $("#tweet-text").focus();
       return
     }
   })

@@ -10,7 +10,7 @@ $(document).ready(() => {
   const $error = $("#error");
   const $form = $("form");
   const $newTweetSection = $(".new-tweet");
-  const $newTweetWrite = $(".nav--write-new-tweet");
+  const $newTweetWrite = $(".write-new-tweet");
 
   /* Helper fuctions */
   const escape = (str) => {
@@ -91,7 +91,7 @@ $(document).ready(() => {
     const userInput = event.currentTarget[0].value;
     
     /* Error Messages */
-    const noInput = "Oh oh! Couldn't hear you humming, please be louder and tell us what are you humming about?";
+    const noInput = "Oh oh! Couldn't hear you humming, please hum louder.";
 
     const inputOverLimit = "That's some nice humming, but please keep it shorter. Thanks.";
 
@@ -109,7 +109,6 @@ $(document).ready(() => {
           $error.empty();
           loadTweets();
           resetFrom();
-          $newTweetSection.slideUp();
         }, 
       });
     }
@@ -119,7 +118,7 @@ $(document).ready(() => {
   $newTweetWrite.on("click", (event) => {
     if ($newTweetSection.is(":hidden")) {
       $newTweetSection.slideDown();
-      $(".new-tweet--input").focus();
+      $("#tweet-text").focus();
       return
     }
 
