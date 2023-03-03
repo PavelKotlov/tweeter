@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
@@ -31,44 +32,36 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div class="nav--write-new-tweet">
+      <div class="write-new-tweet">
         <p><span>Write</span> a new tweet</p>
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
 
-    <header class="profile">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class="profile--username">
-          <h2>Jane Smith</h2>
-      </div>
-    </header>
-
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> Does not appear in the instructions on compass return later.-->
-        <form>
-          <textarea 
-            class="new-tweet--input"
-            name="text" 
-            id="tweet-text" 
-            placeholder="What are you humming about?"></textarea>
-          <div id="error"></div>
-          <div class="new-tweet--footer">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-
+      <header class="profile">
+        <img class="profile-avatar" src="/images/profile-hex.png">
+        <h2 class="profile-username">Jane Smith</h2>
+      </header>
+      <section class="content">
+        <section class="new-tweet">
+          <form>
+            <textarea 
+              id="tweet-text" 
+              name="text" 
+              placeholder="What are you humming about?"></textarea>
+            <div id="error"></div>
+            <div class="new-tweet-footer">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <h3>Latest Tweets</h3>
+        <section id="tweets-container"></section>
+        <button id="return-to-top"><i class="fa-solid fa-angles-up"></i></button>
       </section>
-      <h3>Latest Tweets</h3>
-      <section id="tweets-container">
-      </section>
-      <button id="return-to-top"><i class="fa-solid fa-angles-up"></i></button>
     </main>
   </body>
 </html>
