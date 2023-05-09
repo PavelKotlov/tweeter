@@ -5,14 +5,15 @@ Tweeter is a simple, single-page Twitter clone.
 
 [![made-with-Node](https://img.shields.io/badge/Made%20with-Node.js%20-success)](https://nodejs.org/en/)
 [![made-with-express](https://img.shields.io/badge/Made%20with-Express.js%20-black)](https://expressjs.com/)
-[![made-with-bcrypt](https://img.shields.io/badge/Made%20with-Bcrypt.js%20-blue)](https://www.npmjs.com/package/bcrypt)
-[![made-with-cookie-session](https://img.shields.io/badge/Made%20with-Cookie_Session%20-blue)](https://www.npmjs.com/package/cookie-session)
-[![made-with-ejs](https://img.shields.io/badge/Made%20with-EJS%20-yellow)](https://ejs.co/)
-[![made-with-chai](https://img.shields.io/badge/Made%20with-Chai%20-red)](https://www.chaijs.com/)
-[![made-with-mocha](https://img.shields.io/badge/Made%20with-Mocha%20-brown)](https://mochajs.org/)
-[![made-with-morgan](https://img.shields.io/badge/Made%20with-Morgan%20-yellow)](https://www.npmjs.com/package/morgan)
+[![made-with-jquery](https://img.shields.io/badge/Made%20with-jQuery%20-blue)](https://jquery.com/)
+[![made-with-ajax](https://img.shields.io/badge/Made%20with-AJAX%20-blue)]()
+[![made-with-body-parser](https://img.shields.io/badge/Made%20with-Body_Parser%20-red)](https://www.npmjs.com/package/body-parser)
+[![made-with-chance](https://img.shields.io/badge/Made%20with-Chance%20-red)](https://www.npmjs.com/package/chance)
+[![made-with-md5](https://img.shields.io/badge/Made%20with-MD5%20-black)](https://www.npmjs.com/package/md5)
 [![made-with-nodemon](https://img.shields.io/badge/Made%20with-Nodemon.js%20-success)](https://nodemon.io/)
-[![made-with-bootstrap](https://img.shields.io/badge/Made%20with-Bootstrap%20-purple)](https://getbootstrap.com/docs/4.2/getting-started/introduction/)
+[![made-with-html](https://img.shields.io/badge/Made%20with-HTML%20-orange)](https://developer.mozilla.org/en-US/docs/Web/html)
+[![made-with-css](https://img.shields.io/badge/Made%20with-CSS%20-blue)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript%20-yellow)](https://developer.mozilla.org/en-US/docs/Web/javascript)
 
 ## Table of Content
 - [🔗 Tweeter](#-tweeter)
@@ -27,9 +28,9 @@ Tweeter is a simple, single-page Twitter clone.
 - [⚠️ Disclaimer](#️-disclaimer)
 
 ## 🌟 Features
-- Register, login, and logout users.
-- View, create, edit, and delete short URLs.
-- User passwords and sessions are encrypted.
+- Create tweets under 140 characters.
+- Hide and show new tweet input box.
+- Return to top button when scrolling page.
  
 ## 🚀 Getting Started
 1. Fork repository.
@@ -43,20 +44,8 @@ Tweeter is a simple, single-page Twitter clone.
 
 | <b> Http method </b> | path                             | Description                                                                             |
 | :------------------: | :------------------------------: | :-------------------------------------------------------------------------------------: |
-| `GET`                | `/`                              | Gets index page and redirects to login page, unless logged in then to urls page         |
-| `GET`                | `/users`                         | Gets urls page if user is logged in, else redirects to login page                       |
-| `GET`                | `/users/login`                   | Gets login page, unless logged in then redirects to urls page                           |
-| `GET`                | `/users/logout`                  | Gets login page and sets session to null                                                |
-| `GET`                | `/users/register`                | Gets registration page, unless logged in then redirects to urls page                    |
-| `POST`               | `/users/login`                   | Verifies user credentials and if succesful starts a session                             |
-| `POST`               | `/users/register`                | Creates a new user, starts a session, and redirects to urls page                        |
-| `GET`                | `/urls`                          | Gets urls index page and all the urls for the authorized user                           |
-| `GET`                | `/urls/new`                      | Gets urls new page for the authorized user                                              |
-| `GET`                | `/urls/:id`                      | Gets urls show page for a specific url for the authorized user                          |
-| `GET`                | `/u/:id`                         | Edits a card for a specific topic for the authorized user                               |
-| `POST`               | `/urls`                          | Create a new short URL and redirect to the urls show page                               |
-| `POST`               | `/urls/:id`                      | Edits a short URL for the authorized user                                               |
-| `POST`               | `/urls/:id/delete`               | Delete a short URL for the authorized user                                              |
+| `GET`                | `/`                              | Gets index page and retrieves all the posts of a user                                   |
+| `POST`               | `/`                              | Creates a new post and adds it to all displayed posts                                   |
 
 ## 🧱 Main Structure
 ```sh
@@ -92,9 +81,6 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## ⚠️ Disclaimer
 - This is a project for [LHL web development bootcamp](https://www.lighthouselabs.ca/) and is not meant for production use.
-
-
-
 
 ---
 ## Screenshoots
