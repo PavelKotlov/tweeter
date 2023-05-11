@@ -31,7 +31,11 @@ Tweeter is a simple, single-page Twitter clone.
 - Create tweets under 140 characters.
 - Hide and show new tweet input box.
 - Return to top button when scrolling page.
- 
+
+<div align="center">
+  <img alt="tweet" src="https://github.com/PavelKotlov/tweeter/assets/107829745/979723ca-80d7-4b97-9cd7-3908af3a9a6d" width="512:288" />
+</div>
+
 ## 🚀 Getting Started
 1. Fork repository.
 2. Install all dependencies using the `npm install` command.
@@ -81,12 +85,3 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## ⚠️ Disclaimer
 - This is a project for [LHL web development bootcamp](https://www.lighthouselabs.ca/) and is not meant for production use.
-
----
-## Screenshoots
-
-![Desktop-View](https://user-images.githubusercontent.com/107829745/222691623-0ab9838a-4fd3-4b90-a2ed-5cfb345864e9.JPG)
-![Desktop-View-error](https://user-images.githubusercontent.com/107829745/222691628-cc08fde7-761e-4290-81f4-84131e3f8477.JPG)
-![Tablet-View](https://user-images.githubusercontent.com/107829745/222691631-9ff5e95c-c5fa-45a4-89fa-d937abe97df4.JPG)
-![Tablet-View-error](https://user-images.githubusercontent.com/107829745/222691634-91406b07-b178-4765-ac0e-2bb89bdabc33.JPG)
-![XSS-Attack](https://user-images.githubusercontent.com/107829745/222691637-fda3493a-cdaa-4f21-9da3-ce8e719506b7.JPG)
